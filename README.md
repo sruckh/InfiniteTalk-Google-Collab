@@ -15,7 +15,7 @@ The framework supports both **image-to-video** and **video-to-video** dubbing, m
 ## Features
 
 - **One-Click Setup**: Automated installation of complex dependencies including Flash Attention and xformers
-- **Bilingual Support**: Pre-configured audio encoders for English and Chinese speech
+- **Multi-Language Support**: English audio encoder by default, with Chinese as an optional alternative
 - **Streaming Mode**: Generate videos beyond standard clip limits with continuous output
 - **Gradio Web UI**: User-friendly interface with public URL sharing
 - **GPU Optimization**: Configured for Colab's T4 GPU with aggressive memory offloading
@@ -96,7 +96,8 @@ Run the notebook cells in order:
 
 # Cell 2: Download Models
 # - Wan2.1-I2V-14B-480P (Base model)
-# - chinese-wav2vec2-base (Audio encoder)
+# - wav2vec2-base-960h (English audio encoder - DEFAULT)
+# - chinese-wav2vec2-base (Chinese audio encoder - optional, uncomment in notebook)
 # - MeiGen-AI/InfiniteTalk (Inference weights)
 
 # Cell 3: Launch Application
@@ -144,7 +145,7 @@ python app.py \
 | Parameter | Description | Default | Recommended Range |
 |-----------|-------------|---------|-------------------|
 | `--ckpt_dir` | Path to Wan2.1 base model | - | `weights/Wan2.1-I2V-14B-480P` |
-| `--wav2vec_dir` | Audio encoder path | - | `weights/chinese-wav2vec2-base` |
+| `--wav2vec_dir` | Audio encoder path | - | `weights/wav2vec2-base-960h` (English) or `weights/chinese-wav2vec2-base` (Chinese) |
 | `--infinitetalk_dir` | InfiniteTalk weights | - | `weights/InfiniteTalk/single/` |
 | `--num_persistent_param_in_dit` | Persistent parameters in GPU | 0 | 0-4 (Colab: 0) |
 | `--motion_frame` | Motion context frames | 9 | 3-15 |
@@ -157,18 +158,19 @@ The notebook automatically downloads the following models from Hugging Face:
 | Model | Size | Purpose |
 |-------|------|---------|
 | `Wan-AI/Wan2.1-I2V-14B-480P` | ~27 GB | Base Diffusion Transformer |
-| `TencentGameMate/chinese-wav2vec2-base` | ~380 MB | Chinese audio encoder |
-| `facebook/wav2vec2-base-960h` | ~380 MB | English audio encoder |
+| `facebook/wav2vec2-base-960h` | ~380 MB | English audio encoder (DEFAULT) |
+| `TencentGameMate/chinese-wav2vec2-base` | ~380 MB | Chinese audio encoder (optional) |
 | `MeiGen-AI/InfiniteTalk` | ~1.2 GB | Audio-condition adapter weights |
 
-### Alternative: English Audio Encoder
+### Alternative: Chinese Audio Encoder
 
 ```python
-# In Cell 2, replace with:
-!huggingface-cli download facebook/wav2vec2-base-960h --local-dir ./weights/wav2vec2-base-960h
+# In Cell 2, uncomment the Chinese download lines:
+!huggingface-cli download TencentGameMate/chinese-wav2vec2-base --local-dir ./weights/chinese-wav2vec2-base
+!huggingface-cli download TencentGameMate/chinese-wav2vec2-base model.safetensors --revision refs/pr/1 --local-dir ./weights/chinese-wav2vec2-base
 
 # In Cell 3, update launch command:
-!python app.py --wav2vec_dir 'weights/wav2vec2-base-960h' ...
+!python app.py --wav2vec_dir 'weights/chinese-wav2vec2-base' ...
 ```
 
 ## Troubleshooting

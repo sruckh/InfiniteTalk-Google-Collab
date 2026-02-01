@@ -32,7 +32,9 @@ wheels/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+# InfiniteTalk.ipynb is the main file - keep it
 *.ipynb
+!InfiniteTalk.ipynb
 
 # Virtual environments
 venv/
