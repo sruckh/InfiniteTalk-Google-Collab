@@ -1,8 +1,8 @@
 # InfiniteTalk Google Colab Deployment
 
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sruckh/InfiniteTalk-Google-Collab/blob/main/InfiniteTalk.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
-[![Platform](https://img.shields.io/badge/platform-Google%20Colab-orange.svg)](https://colab.research.google.com/)
 
 > A streamlined, one-click solution for running **InfiniteTalk** on Google Colab — a state-of-the-art sparse-frame video dubbing framework that generates unlimited-length talking videos with high lip-sync accuracy and consistent identity preservation.
 
@@ -48,6 +48,21 @@ The processing pipeline transforms audio and visual inputs through seven stages:
 
 ## Quick Start
 
+### One-Click Launch
+
+Click the **"Open in Colab"** button at the top of this README to launch the notebook directly in Google Colab. No download or upload required.
+
+[![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sruckh/InfiniteTalk-Google-Collab/blob/main/InfiniteTalk.ipynb)
+
+### Alternative: Manual Setup
+
+If you prefer to download the notebook:
+
+1. Download `InfiniteTalk.ipynb` from this repository
+2. Open [Google Colab](https://colab.research.google.com/)
+3. Go to **File** → **Upload notebook**
+4. Select the downloaded file
+
 ### Prerequisites
 
 | Requirement | Minimum | Recommended |
@@ -57,23 +72,6 @@ The processing pipeline transforms audio and visual inputs through seven stages:
 | Storage | 30 GB | 50 GB+ |
 
 ### Installation
-
-#### Option 1: Direct Download (Simplest)
-
-1. Download `InfiniteTalk.ipynb` from this repository
-2. Open [Google Colab](https://colab.research.google.com/)
-3. Go to **File** → **Upload notebook**
-4. Select the downloaded file
-
-#### Option 2: Clone Repository
-
-```bash
-git clone https://github.com/your-username/infinitetalk.git
-cd infinitetalk
-# Upload InfiniteTalk.ipynb to Colab
-```
-
-### Configuration
 
 **GPU Runtime Setup (Required):**
 
