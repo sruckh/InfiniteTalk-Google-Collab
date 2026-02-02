@@ -1,6 +1,7 @@
 # InfiniteTalk Google Colab Deployment
 
 [![Open in Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/sruckh/InfiniteTalk-Google-Collab/blob/main/InfiniteTalk.ipynb)
+[![ComfyUI Colab](https://img.shields.io/badge/ComfyUI%20Colab-Open-orange.svg)](https://colab.research.google.com/github/sruckh/InfiniteTalk-Google-Collab/blob/main/ComfyUI_InfiniteTalk.ipynb)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
 
