@@ -13,6 +13,12 @@ InfiniteTalk is a cutting-edge audio-driven video generation framework developed
 
 The framework supports both **image-to-video** and **video-to-video** dubbing, maintaining visual consistency across arbitrarily long output sequences through its innovative sparse-frame generation approach.
 
+### ComfyUI Notebook (Why It Exists)
+
+This repository also includes a **ComfyUI** notebook (`ComfyUI_InfiniteTalk.ipynb`). It is provided as a practical alternative for **Colab Free** users because the standard notebook can exceed the available disk space when downloading all model weights at full size. The ComfyUI workflow uses **repackaged/optimized weights** (and a slimmer install path) to reduce storage pressure while still enabling InfiniteTalk in a node-based UI.
+
+If the main notebook fails to download all models on a free T4 runtime, use the ComfyUI notebook instead.
+
 ## Features
 
 - **One-Click Setup**: Automated installation of complex dependencies including Flash Attention and xformers
